@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAHAZ EARN</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">M</span><div><b>MAHAZ EARN</b><small>Watch • Earn • Redeem</small></div></div>
+  <button id="logoutBtn" class="ghost hidden" onclick="logout()">Logout</button>
+</header>
+
+<main>
+<section id="auth" class="card auth">
+  <h1>Earn rewards online</h1>
+  <p class="muted">Complete available videos and tasks to collect coins.</p>
+  <div class="tabs"><button class="tab active" onclick="showAuth('login')">Login</button><button class="tab" onclick="showAuth('register')">Create account</button></div>
+  <form id="loginForm" onsubmit="login(event)">
+    <input id="loginEmail" type="email" placeholder="Email" required>
+    <input id="loginPassword" type="password" placeholder="Password" required>
+    <button class="primary">Login</button>
+  </form>
+  <form id="registerForm" class="hidden" onsubmit="register(event)">
+    <input id="regName" placeholder="Your name" required>
+    <input id="regEmail" type="email" placeholder="Email" required>
+    <input id="regPassword" type="password" minlength="6" placeholder="Password (6+ characters)" required>
+    <button class="primary">Create account</button>
+  </form>
+  <p id="authMsg" class="msg"></p>
+</section>
+
+<section id="app" class="hidden">
+  <div class="hero">
+    <div><p class="muted">Welcome back</p><h1 id="hello">MAHAZ</h1></div>
+    <div class="balance"><span>Coin balance</span><strong id="coins">0</strong> 🪙</div>
+  </div>
+
+  <div class="grid">
+    <div class="card task">
+      <div class="icon">▶</div><h2>Rewarded Video Ad</h2>
+      <p>Choose to watch one available rewarded ad. Coins are usable only for MAHAZ EARN rewards.</p>
+      <button class="primary" onclick="completeTask('video')">Watch rewarded ad</button>
+      <small>Demo reward: +10 coins</small>
+    </div>
+    <div class="card task">
+      <div class="icon">📢</div><h2>Sponsored Task</h2>
+      <p>Complete an approved sponsored task when available. Never click an ad just to earn coins.</p>
+      <button class="primary" onclick="completeTask('task')">Open task</button>
+      <small>Demo reward: +5 coins</small>
+    </div>
+    <div class="card task">
+      <div class="icon">🎁</div><h2>Daily Bonus</h2>
+      <p>Claim your daily bonus when it is available.</p>
+      <button class="primary" onclick="completeTask('daily')">Claim bonus</button>
+      <small>Demo reward: +20 coins</small>
+    </div>
+  </div>
+
+  <div class="card withdraw">
+    <h2>Redeem in MAHAZ EARN</h2>
+    <p class="muted">Coins from rewarded ads can be exchanged only for eligible digital rewards/services inside the platform.</p>
+    <div class="withdrawGrid">
+      <select id="reward">
+        <option value="premium-day">Premium Day — 500 coins</option>
+        <option value="profile-badge">Profile Badge — 800 coins</option>
+        <option value="theme-pack">Theme Pack — 1,200 coins</option>
+      </select>
+      <button class="primary" onclick="redeem()">Redeem reward</button>
+    </div>
+    <p id="withdrawMsg" class="msg"></p>
+  </div>
+
+  <div class="note card">
+    <b>Important:</b> Connect a real ad network only after checking that its terms allow incentivized/rewarded traffic. Never ask users to click ads just to generate revenue.
+  </div>
+</section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
