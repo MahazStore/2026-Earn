@@ -1,73 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MAHAZ EARN</title>
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050914"><title>2026 EARN</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#07111f;color:#f5f7fb}
-header{height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1d2b3e;background:#091523;position:sticky;top:0;z-index:5}
-.brand{display:flex;gap:11px;align-items:center}.brand b{display:block;letter-spacing:.7px}.brand small{color:#8190a6}
-.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#6d5dfc,#22c1ee);font-weight:900;font-size:22px}
-main{max-width:1050px;margin:35px auto;padding:0 18px}.card{background:#0c1929;border:1px solid #1c3046;border-radius:20px;padding:24px;box-shadow:0 15px 45px #0003}
-.auth{max-width:460px;margin:50px auto}.auth h1{font-size:32px;margin:0 0 8px}.muted{color:#8d9cb0}
-.tabs{display:flex;gap:8px;margin:25px 0 15px}.tab,.ghost{background:transparent;color:#c9d3df;border:1px solid #2a3d54;border-radius:10px;padding:10px 14px}
-.tab.active{background:#172941;color:#fff}.hidden{display:none!important}form{display:grid;gap:12px}
-input,select{width:100%;padding:14px;border-radius:11px;border:1px solid #294057;background:#091523;color:#fff;outline:none}
-button{cursor:pointer;font-weight:700}.primary{border:0;border-radius:11px;padding:13px 16px;background:linear-gradient(135deg,#6d5dfc,#22a9ee);color:#fff}
-.msg{min-height:20px;color:#ffbf69}.hero{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:25px}
-.hero h1{font-size:36px;margin:0}.balance{background:#101f33;border:1px solid #29415b;padding:17px 22px;border-radius:16px;text-align:right}
-.balance span{display:block;color:#8999ad;font-size:13px}.balance strong{font-size:29px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.task h2{margin:8px 0}.task p{color:#a9b5c4;line-height:1.55;min-height:72px}.task small{display:block;color:#75879c;margin-top:10px}.icon{font-size:30px}
-.withdraw{margin-top:20px}.withdrawGrid{display:grid;grid-template-columns:1fr auto;gap:10px}.note{margin-top:18px;color:#b7c2cf}
-.adbox{min-height:90px;margin:0 0 22px;padding:16px;border:1px dashed #35506d;border-radius:16px;text-align:center;color:#8d9cb0;background:#091523}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.balance{width:100%;text-align:left}.withdrawGrid{grid-template-columns:1fr}.auth{margin:20px auto}.hero h1{font-size:30px}}
-</style>
-</head>
-<body>
-<header>
-<div class="brand"><span class="logo">M</span><div><b>MAHAZ EARN</b><small>Watch • Earn • Redeem</small></div></div>
-<button id="logoutBtn" class="ghost hidden" onclick="logout()">Logout</button>
-</header>
-<main>
-<section id="auth" class="card auth">
-<h1>Earn rewards online</h1><p class="muted">Complete available rewarded tasks and collect in-platform coins.</p>
-<div class="tabs"><button class="tab active" onclick="showAuth('login')">Login</button><button class="tab" onclick="showAuth('register')">Create account</button></div>
-<form id="loginForm" onsubmit="login(event)"><input id="loginEmail" type="email" placeholder="Email" required><input id="loginPassword" type="password" placeholder="Password" required><button class="primary">Login</button></form>
-<form id="registerForm" class="hidden" onsubmit="register(event)"><input id="regName" placeholder="Your name" required><input id="regEmail" type="email" placeholder="Email" required><input id="regPassword" type="password" minlength="6" placeholder="Password (6+ characters)" required><button class="primary">Create account</button></form>
-<p id="authMsg" class="msg"></p>
+*{box-sizing:border-box}body{margin:0;background:#030711;color:#f7f9ff;font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.nav{height:72px;border-bottom:1px solid #17375d;background:#020712;display:flex;align-items:center;position:sticky;top:0;z-index:5}
+.wrap{width:min(1180px,calc(100% - 28px));margin:auto}.navin{display:flex;align-items:center;gap:24px}.logo{font-size:23px;font-weight:900;min-width:220px}.logo span{background:linear-gradient(90deg,#fff,#20c8ff,#963cff);color:transparent;background-clip:text}.links{display:flex;gap:24px;flex:1;justify-content:center}.links a{font-weight:700;color:#d6e1f1}.links a:hover{color:#27c5ff}.coin{padding:8px 12px;border:1px solid #294a70;border-radius:25px;font-weight:900}.plus{border:0;border-radius:8px;background:#7b2cff;color:white;padding:7px 10px}
+.hero{margin-top:18px;min-height:405px;border:1px solid #173f6d;border-radius:24px;overflow:hidden;position:relative;background:radial-gradient(circle at 65% 35%,#203eb055,transparent 30%),linear-gradient(115deg,#070d1b,#07142c)}
+.heroText{position:relative;z-index:2;padding:54px 0 35px 48px;width:58%}.pill{display:inline-block;border:1px solid #8e35ff;background:#211047;padding:8px 15px;border-radius:30px;color:#d9a6ff;font-weight:800;font-size:12px}.hero h1{font-size:72px;line-height:.9;margin:20px 0 12px;letter-spacing:-3px}.hero h1 span{color:#1ebcff}.hero p{font-size:19px;line-height:1.4;max-width:600px;color:#e4edf9}.portrait{position:absolute;right:8%;bottom:0;height:93%;width:40%;object-fit:cover;object-position:center top;filter:contrast(1.08);mask-image:linear-gradient(to right,transparent,#000 25%)}.side{position:absolute;right:24px;top:65px;width:240px;display:grid;gap:12px}.benefit{border:1px solid #1774a5;background:#06182bec;border-radius:17px;padding:14px;font-weight:800}.benefit small{display:block;color:#91a7c0;margin-top:3px}
+.btn{border:0;border-radius:12px;padding:13px 19px;font-weight:900;cursor:pointer}.primary{background:linear-gradient(90deg,#8a17ff,#20baff);color:white}.secondary{background:#0a1a30;color:#dce8f7;border:1px solid #29496c}.actions{display:flex;gap:10px;margin-top:22px}
+.stats{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px;margin:14px 0}.stat,.card{background:linear-gradient(180deg,#08172b,#061224);border:1px solid #153a60;border-radius:18px}.stat{padding:15px 18px;display:flex;align-items:center;gap:13px}.avatar{width:52px;height:52px;border-radius:50%;border:2px solid #9635ff;object-fit:cover}.muted{color:#91a5c0}.badge{background:#762aff;border-radius:20px;padding:4px 8px;font-size:10px;margin-left:6px}.head{margin:28px 3px 13px}.head h2{margin:0;font-size:25px}.head p{margin:5px 0;color:#91a5c0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{padding:18px}.icon{font-size:27px}.card h3{margin:12px 0 5px}.card p{color:#9eb1c8;line-height:1.4;min-height:55px;font-size:14px}.full{width:100%}.promos,.lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.promo{min-height:155px;border:1px solid #5b2bd6;border-radius:18px;padding:20px;background:linear-gradient(110deg,#120c35,#07152c)}.promo h2{margin:7px 0}.promo p{color:#b7c4d8;max-width:65%}.task{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #15304e}.task:last-child{border:0}.grow{flex:1}.task small{color:#91a5c0;display:block}.earn{color:#ffd039;font-weight:900}.mini{padding:8px 12px;border-radius:9px;border:1px solid #28527c;background:#0b2340;color:white;font-weight:800}.footer{margin-top:34px;padding:28px 0 38px;border-top:1px solid #123052;color:#91a5c0}.footerin{display:flex;justify-content:space-between;gap:20px}.footer strong{color:white}
+@media(max-width:900px){.links{display:none}.logo{min-width:0}.heroText{width:100%;padding:42px 25px}.hero h1{font-size:54px}.portrait{opacity:.38;width:68%;right:-10%}.side{display:none}.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr}.promos,.lower{grid-template-columns:1fr}}
+@media(max-width:560px){.hero{min-height:510px}.hero h1{font-size:46px}.portrait{width:100%;height:72%;right:-18%}.grid{grid-template-columns:1fr}.actions{flex-direction:column}.footerin{flex-direction:column}}
+</style></head><body>
+<nav class="nav"><div class="wrap navin"><div class="logo">♛ <span>2026 EARN</span></div><div class="links"><a href="#home">⌂ Home</a><a href="#earn">◉ Earn</a><a href="#rewards">🎁 Rewards</a><a href="#history">◷ History</a><a href="#support">◉ Support</a></div><div class="coin">🪙 <b id="top">500</b> <button class="plus" onclick="add(0)">+</button></div></div></nav>
+<main class="wrap" id="home">
+<section class="hero"><div class="heroText"><span class="pill">💎 PLATFORM REWARDS</span><h1>2026 <span>EARN</span></h1><p>Complete approved tasks, watch eligible rewarded content, collect platform coins and redeem eligible digital rewards.</p><div class="actions"><button class="btn primary" onclick="document.querySelector('#earn').scrollIntoView()">Start Earning Now →</button><button class="btn secondary" onclick="alert('Account system can be connected here.')">Create Account</button></div></div><img class="portrait" src="assets/profile.png" alt="Profile"><div class="side"><div class="benefit">🪙 FAST & EASY<small>Simple earning tasks</small></div><div class="benefit">🛡️ SAFE & CLEAR<small>Transparent rewards</small></div><div class="benefit">⚡ QUICK REWARDS<small>Verified completion</small></div></div></section>
+<section class="stats"><div class="stat"><img class="avatar" src="assets/profile.png"><div><small class="muted">Welcome Back,</small><br><b>MAHAZ</b><span class="badge">Level 1</span></div></div><div class="stat">🪙 <div><small class="muted">Your Coins</small><br><b id="main">500</b></div></div><div class="stat">🎁 <div><small class="muted">Daily Bonus</small><br><b>Available</b></div></div></section>
+<div class="head" id="earn"><h2>⚡ Earn Coins</h2><p>Choose an approved earning method.</p></div>
+<section class="grid">
+<div class="card"><div class="icon">▶️</div><h3>Watch Ads</h3><p>Watch an eligible rewarded ad when available.</p><button class="btn primary full" onclick="add(10)">Watch Now →</button></div>
+<div class="card"><div class="icon">✓</div><h3>Complete Tasks</h3><p>Finish approved sponsor or survey tasks.</p><button class="btn primary full" onclick="add(20)">View Tasks →</button></div>
+<div class="card"><div class="icon">🎁</div><h3>Daily Bonus</h3><p>Claim your platform bonus once per day.</p><button class="btn primary full" onclick="daily()">Claim Bonus →</button></div>
+<div class="card"><div class="icon">👥</div><h3>Refer Friends</h3><p>Invite eligible users with your referral link.</p><button class="btn primary full" onclick="alert('Referral system ready to connect.')">Invite Now →</button></div>
 </section>
-
-<section id="app" class="hidden">
-<div class="hero"><div><p class="muted">Welcome back</p><h1 id="hello">MAHAZ</h1></div><div class="balance"><span>Coin balance</span><strong id="coins">0</strong> 🪙</div></div>
-
-<div class="adbox">AD SPACE — paste your approved Adsterra website ad code here after your ad unit is approved.</div>
-
-<div class="grid">
-<div class="card task"><div class="icon">▶️</div><h2>Rewarded Video</h2><p>Use an approved rewarded-ad provider. The demo button below simulates a verified completion.</p><button class="primary" onclick="reward('video')">Watch rewarded ad</button><small>Demo: +10 coins</small></div>
-<div class="card task"><div class="icon">📢</div><h2>Sponsored Task</h2><p>Complete an approved sponsor task. Never click ads only to generate revenue.</p><button class="primary" onclick="reward('task')">Open task</button><small>Demo: +5 coins</small></div>
-<div class="card task"><div class="icon">🎁</div><h2>Daily Bonus</h2><p>Claim one demo bonus per local day.</p><button class="primary" onclick="daily()">Claim bonus</button><small>Demo: +20 coins</small></div>
-</div>
-
-<div class="card withdraw"><h2>Redeem in MAHAZ EARN</h2><p class="muted">Coins are platform-only and not cash. Choose an eligible digital reward.</p>
-<div class="withdrawGrid"><select id="reward"><option value="premium">Premium Day — 500 coins</option><option value="badge">Profile Badge — 800 coins</option><option value="theme">Theme Pack — 1,200 coins</option><option value="service">Service Credit — 2,000 coins</option></select><button class="primary" onclick="redeem()">Redeem reward</button></div>
-<p id="msg" class="msg"></p></div>
-<div class="note card"><b>Important:</b> Real ads must be integrated according to the selected provider's policies. Do not incentivize ad clicks or generate artificial impressions.</div>
-</section>
+<section class="promos"><div class="promo"><span class="pill">🔥 LIMITED TIME</span><h2>Special Offer</h2><p>Check available platform promotions and eligible bonuses.</p><button class="btn primary" onclick="alert('Offers will appear here.')">View Offers →</button></div><div class="promo"><span class="pill">▶ WATCH & EARN</span><h2>Rewarded Video</h2><p>Use the approved rewarded-ad experience; rewards follow verified completion.</p><button class="btn primary" onclick="add(10)">Watch Ad →</button></div></section>
+<section class="lower" id="history"><div class="card"><div class="head"><h2>📋 Available Tasks</h2><p>Demo tasks — connect your approved provider before launch.</p></div>
+<div class="task"><span>📱</span><div class="grow"><b>Install & Try App</b><small>Approved sponsor offer</small></div><span class="earn">+200</span><button class="mini" onclick="add(200)">Start</button></div>
+<div class="task"><span>📝</span><div class="grow"><b>Complete Survey</b><small>Approved survey</small></div><span class="earn">+150</span><button class="mini" onclick="add(150)">Start</button></div>
+<div class="task"><span>▶️</span><div class="grow"><b>Watch 5 Videos</b><small>Eligible rewarded content</small></div><span class="earn">+50</span><button class="mini" onclick="add(50)">Start</button></div></div>
+<div class="card" id="rewards"><div class="head"><h2>🎁 Redeem Rewards</h2><p>Platform-only digital rewards.</p></div>
+<div class="task"><span>⭐</span><div class="grow"><b>Premium Day</b><small>500 coins</small></div><button class="mini" onclick="redeem(500)">Redeem</button></div>
+<div class="task"><span>🏅</span><div class="grow"><b>Profile Badge</b><small>800 coins</small></div><button class="mini" onclick="redeem(800)">Redeem</button></div>
+<div class="task"><span>🎨</span><div class="grow"><b>Theme Pack</b><small>1,200 coins</small></div><button class="mini" onclick="redeem(1200)">Redeem</button></div></div></section>
+<footer class="footer" id="support"><div class="footerin"><div><strong>♛ 2026 EARN</strong><br><small>Watch • Earn • Redeem</small></div><div>Home &nbsp; Earn &nbsp; Rewards &nbsp; History &nbsp; Support</div><div>f &nbsp; ▶ &nbsp; ◎ &nbsp; ✈</div></div></footer>
 </main>
 <script>
-const $=id=>document.getElementById(id);
-function getUser(){return JSON.parse(localStorage.getItem("mahaz_user")||"null")}
-function save(u){localStorage.setItem("mahaz_user",JSON.stringify(u));render(u)}
-function render(u){$("hello").textContent=u.name;$("coins").textContent=u.coins.toLocaleString()}
-function enter(u){$("auth").classList.add("hidden");$("app").classList.remove("hidden");$("logoutBtn").classList.remove("hidden");render(u)}
-function showAuth(mode){$("loginForm").classList.toggle("hidden",mode!=="login");$("registerForm").classList.toggle("hidden",mode!=="register");document.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",mode==="login"?i===0:i===1));$("authMsg").textContent=""}
-function register(e){e.preventDefault();let email=$("regEmail").value.trim().toLowerCase();if(localStorage.getItem("mahaz_"+email)){ $("authMsg").textContent="Account already exists.";return}let u={name:$("regName").value.trim(),email,password:$("regPassword").value,coins:0,lastDaily:""};localStorage.setItem("mahaz_"+email,JSON.stringify(u));save(u);enter(u)}
-function login(e){e.preventDefault();let email=$("loginEmail").value.trim().toLowerCase(),u=JSON.parse(localStorage.getItem("mahaz_"+email)||"null");if(!u||u.password!==$("loginPassword").value){$("authMsg").textContent="Invalid email or password.";return}save(u);enter(u)}
-function reward(type){let u=getUser();if(!u)return;u.coins+=type==="video"?10:5;localStorage.setItem("mahaz_"+u.email,JSON.stringify(u));save(u);alert("Demo reward added. Connect a verified provider before production.")}
-function daily(){let u=getUser(),today=new Date().toISOString().slice(0,10);if(u.lastDaily===today){$("msg").textContent="Daily bonus already claimed.";return}u.lastDaily=today;u.coins+=20;localStorage.setItem("mahaz_"+u.email,JSON.stringify(u));save(u);$("msg").textContent="Daily bonus added."}
-function redeem(){let u=getUser(),costs={premium:500,badge:800,theme:1200,service:2000},c=costs[$("reward").value];if(u.coins<c){$("msg").textContent="Not enough coins.";return}u.coins-=c;localStorage.setItem("mahaz_"+u.email,JSON.stringify(u));save(u);$("msg").textContent="Reward redeemed successfully."}
-function logout(){localStorage.removeItem("mahaz_session");location.reload()}
-window.addEventListener("load",()=>{let u=getUser();if(u)enter(u)})
-</script>
-</body></html>
+let coins=+localStorage.getItem("2026earn_coins")||500;
+function sync(){top.textContent=coins.toLocaleString();main.textContent=coins.toLocaleString();localStorage.setItem("2026earn_coins",coins)}
+function add(n){coins+=n;sync();if(n)alert("Demo reward: +"+n+" coins")}
+function daily(){let d=new Date().toISOString().slice(0,10);if(localStorage.getItem("2026earn_daily")==d)return alert("Daily bonus already claimed.");localStorage.setItem("2026earn_daily",d);add(20)}
+function redeem(n){if(coins<n)return alert("Not enough coins.");coins-=n;sync();alert("Reward redeemed in demo mode.")}
+sync();
+</script></body></html>
